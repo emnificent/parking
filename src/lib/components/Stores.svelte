@@ -28,7 +28,7 @@
       <article>
         <h3>Negotiate</h3>
         <p>You have an interesting project idea but the domain is too expensive?</p>
-        <a href="https://www.namepros.com/conversations/add?to=EtherealEmilie&toUserId=1068118" target="_blank">Send me a message</a>
+        <a href="/contact">Send me a message</a>
       </article>
     </li>
   </ul>

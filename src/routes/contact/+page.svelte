@@ -1,5 +1,12 @@
 <script>
+  import { onMount } from 'svelte';
+
   export let form;
+
+  let url = undefined;
+  onMount(() => {
+    url = window.location.href.replace('contact', '').replace(/\//g, '').replace(/(http|https):/, '');
+  });
 </script>
 
 <svelte:head>
@@ -10,8 +17,9 @@
   <div>
     <h2>Message</h2>
     <form method="POST">
+      <input type="text" name="domain" value={url} readonly />
       <input type="email" name="email" placeholder="name@email.com" required />
-      <textarea name="message" rows="10" placeholder="Describe your needs, be as specific as possible" required></textarea>
+      <textarea name="message" rows="10" placeholder="Specify your budget and describe your project..." required></textarea>
       <button>Send</button>
       { #if form?.success }
         <p>Thanks for your message!</p>

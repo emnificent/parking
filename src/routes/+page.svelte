@@ -28,7 +28,7 @@
   </div>
 </main>
 
-<footer><a href="/contact">Hire my web app developer services</a></footer>
+<footer></footer>
 
 <style lang="scss">
   header {
@@ -74,8 +74,7 @@
   }
 
   footer {
-    margin-block: 12rem 1rem;
-    text-align: center;
+    height: 20vh;
   }
 
   main {

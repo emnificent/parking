@@ -3,11 +3,11 @@ import { fail } from '@sveltejs/kit';
 export const actions = {
   default: async ({ request }) => {
     const data = await request.formData();
-    if (!data.get('email') || !data.get('message')) return;
+    if (!data.get('domain') || !data.get('email') || !data.get('message')) return;
 
     const body = {
-      username: 'Job offer',
-      content: `Email: ${data.get('email')}\n${data.get('message')}`
+      username: 'Buying offer',
+      content: `# ${data.get('domain')}\nEmail: ${data.get('email')}\n${data.get('message')}`
     };
 
     const options = {
