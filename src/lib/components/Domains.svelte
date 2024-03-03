@@ -39,7 +39,7 @@
   <h2>Other domains for sale ({domainsAmount})</h2>
   <ul id="domains-list">
     { #each domainsList as domainName }
-      <li><a href="https://${domainName}" target="_blank">{domainName}</a></li>
+      <li><a href="https://{domainName}" target="_blank">{domainName}</a></li>
     { /each }
   </ul>
 </section>
