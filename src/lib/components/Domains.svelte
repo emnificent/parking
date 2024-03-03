@@ -1,9 +1,7 @@
 <script>
-	import { onMount } from "svelte";
+	export let domain;
 
-  export let domain;
-
-  let domainsList = [
+  const domainsList = [
     'antifamail.org',
     'blackcats.party',
     'bum.su',
@@ -25,21 +23,13 @@
   }
 
   shuffle(domainsList);
-
-  // filter out current domain
-  domainsList = domainsList.filter((element) => element !== domain);
-  
-  let domainsAmount = undefined;
-  onMount(() => {
-    domainsAmount = document.getElementById('domains-list').children.length;
-  });
 </script>
 
 <section>
-  <h2>Other domains for sale ({domainsAmount})</h2>
+  <h2>Other domains for sale ({domainsList.length - 1})</h2>
   <ul id="domains-list">
     { #each domainsList as domainName }
-      <li><a href="https://{domainName}" target="_blank">{domainName}</a></li>
+      <li class:hide={domainName === domain}><a href="https://{domainName}" target="_blank">{domainName}</a></li>
     { /each }
   </ul>
 </section>
@@ -60,5 +50,9 @@
 
   a {
     font-family: monospace;
+  }
+
+  .hide {
+    display: none;
   }
 </style>

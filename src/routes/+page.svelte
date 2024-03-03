@@ -8,11 +8,6 @@
   onMount(() => {
     url = window.location.href.replace(/\//g, '').replace(/(http|https):/, '');
   });
-  
-  let reloaded = false;
-  function reload() {
-    reloaded = true;
-  }
 </script>
 
 <svelte:head>
@@ -27,10 +22,8 @@
 <main>  
   <Stores domain={url} />
 
-  <div class="extra" on:load|once={reload}>
-    { #key reloaded }
-      <Domains domain={url} />
-    { /key }
+  <div class="extra">
+    <Domains domain={url} />
     <Commentary />
   </div>
 </main>
