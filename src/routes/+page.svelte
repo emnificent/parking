@@ -35,7 +35,7 @@
   </div>
 </main>
 
-<footer></footer>
+<footer><a href="/contact">Hire my web app developer services</a></footer>
 
 <style lang="scss">
   header {
@@ -81,7 +81,8 @@
   }
 
   footer {
-    height: 4rem;
+    margin-block: 12rem 1rem;
+    text-align: center;
   }
 
   main {
