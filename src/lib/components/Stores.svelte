@@ -13,6 +13,7 @@
         <h3>Buy through Sedo</h3>
         <p>If you don't want to reward GoDaddy's anti-competitive practices</p>
         <a href="https://sedo.com/search/details/?domain={domain}" target="_blank">Buy now</a>
+        <p class="disclaimer">Sedo takes time to list a domain, if you land on the brokerage service page, come back here in 2 days, the link should work by then</p>
       </article>
     </li>
     <li class="dan">
@@ -20,6 +21,7 @@
         <h3>Buy through Dan</h3>
         <p>If you rather trust GoDaddy</p>
         <a href="https://dan.com/buy-domain/{domain}" target="_blank">Buy now</a>
+        <p class="disclaimer">higher fees, so more expensive</p>
       </article>
     </li>
     <li class="negotiate">
@@ -162,5 +164,9 @@
         }
       }
     }
+  }
+
+  .disclaimer {
+    font-size: var(--fs-text--small);
   }
 </style>
