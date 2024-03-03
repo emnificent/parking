@@ -23,7 +23,7 @@
   <Stores domain={url} />
 
   <div class="extra">
-    <Domains />
+    <Domains domain={url} />
     <Commentary />
   </div>
 </main>

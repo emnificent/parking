@@ -1,24 +1,46 @@
 <script>
 	import { onMount } from "svelte";
 
+  export let domain;
+
+  let domainsList = [
+    'blackcats.party',
+    'bum.su',
+    'emilie.fun',
+    'emilie.pm',
+    'e-pals.party',
+    'lust.sx',
+    'lustess.com',
+    'lustfulslut.com',
+    'testtube.work'
+  ]
+
+  // filter out current domain
+  domainsList = domainsList.filter((element) => element !== domain);
+
+  // Fisher-Yates x Durstenfeld
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i -= 1) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  }
+
+  shuffle(domainsList);
+  
   let domainsAmount = undefined;
   onMount(() => {
-    domainsAmount = document.getElementById('domains').children.length;
+    domainsAmount = document.getElementById('domains-list').children.length;
   })
+
 </script>
 
 <section>
   <h2>Other domains for sale ({domainsAmount})</h2>
-  <ul id="domains">
-    <li><a href="https://emilie.fun" target="_blank">emilie.fun</a></li>
-    <li><a href="https://emilie.pm" target="_blank">emilie.pm</a></li>
-    <li><a href="https://testtube.work" target="_blank">testtube.work</a></li>
-    <li><a href="https://lustfulslut.com" target="_blank">lustfulslut.com</a></li>
-    <li><a href="https://lustess.com" target="_blank">lustess.com</a></li>
-    <li><a href="https://lust.sx" target="_blank">lust.sx</a></li>
-    <li><a href="https://blackcats.party" target="_blank">blackcats.party</a></li>
-    <li><a href="https://e-pals.party" target="_blank">e-pals.party</a></li>
-    <li><a href="https://bum.su" target="_blank">bum.su</a></li>
+  <ul id="domains-list">
+    { #each domainsList as domainName }
+      <li><a href="https://${domainName}" target="_blank">{domainName}</a></li>
+    { /each }
   </ul>
 </section>
 
