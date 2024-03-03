@@ -14,10 +14,7 @@
     'lustess.com',
     'lustfulslut.com',
     'testtube.work'
-  ]
-
-  // filter out current domain
-  domainsList = domainsList.filter((element) => element !== domain);
+  ];
 
   // Fisher-Yates x Durstenfeld
   function shuffle(array) {
@@ -28,12 +25,14 @@
   }
 
   shuffle(domainsList);
+
+  // filter out current domain
+  domainsList = domainsList.filter((element) => element !== domain);
   
   let domainsAmount = undefined;
   onMount(() => {
     domainsAmount = document.getElementById('domains-list').children.length;
-  })
-
+  });
 </script>
 
 <section>
