@@ -4,6 +4,7 @@
   export let domain;
 
   let domainsList = [
+    'antifamail.org',
     'blackcats.party',
     'bum.su',
     'emilie.fun',
