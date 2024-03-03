@@ -11,7 +11,7 @@
     <h2>Message</h2>
     <form method="POST">
       <input type="email" name="email" placeholder="name@email.com" required />
-      <textarea name="message" rows="10" placeholder="Your message, be as specific as possible" required></textarea>
+      <textarea name="message" rows="10" placeholder="Describe your needs, be as specific as possible" required></textarea>
       <button>Send</button>
       { #if form?.success }
         <p>Thanks for your message!</p>
