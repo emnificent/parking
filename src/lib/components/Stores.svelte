@@ -21,7 +21,7 @@
         <h3>Buy through Dan</h3>
         <p>If you rather trust GoDaddy</p>
         <a href="https://dan.com/buy-domain/{domain}" target="_blank">Buy now</a>
-        <p class="disclaimer">higher fees, so more expensive</p>
+        <p class="disclaimer">higher fees = costlier <br /> usually around +9%</p>
       </article>
     </li>
     <li class="negotiate">
