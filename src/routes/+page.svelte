@@ -1,29 +1,25 @@
 <script>
-	import { onMount } from 'svelte';
 	import Stores from '$lib/components/Stores.svelte';
 	import Domains from '$lib/components/Domains.svelte';
 	import Commentary from '$lib/components/Commentary.svelte';
 
-  let url = undefined;
-  onMount(() => {
-    url = window.location.href.replace(/\//g, '').replace(/(http|https):/, '');
-  });
+  const domain = window.location.hostname;
 </script>
 
 <svelte:head>
-  <title>{url} is for sale</title>
+  <title>{domain} is for sale</title>
 </svelte:head>
 
 <header>
-  <h1>{url} is for sale</h1>
+  <h1>{domain} is for sale</h1>
   <p>You're in luck!</p>
 </header>
 
-<main>  
-  <Stores domain={url} />
+<main>
+  <Stores {domain} />
 
   <div class="extra">
-    <Domains domain={url} />
+    <Domains {domain} />
     <Commentary />
   </div>
 </main>

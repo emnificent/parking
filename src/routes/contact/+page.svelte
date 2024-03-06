@@ -5,7 +5,7 @@
 
   let url = undefined;
   onMount(() => {
-    url = window.location.href.replace('contact', '').replace(/\//g, '').replace(/(http|https):/, '');
+    url = window.location.hostname;
   });
 </script>
 

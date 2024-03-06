@@ -1,10 +1,17 @@
 <script>
-  export let domain
+	import { onMount } from 'svelte';
+  import domainsList from '$lib/data/domains.js';
+  export let domain;
+
+  let domainPrice = 0;
+  onMount(() => {
+    domainPrice = domainsList.filter(element => element.name === domain)[0].price;
+  })
 </script>
 
 <section>
   <div class="options-header">
-    <h2>Get {domain} today</h2>
+    <h2>Get {domain} for ${domainPrice}</h2>
     <p>Three options</p>
   </div>
   <ul>
