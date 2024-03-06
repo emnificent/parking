@@ -1,18 +1,7 @@
 <script>
+	import { onMount } from 'svelte';
+  import domainsList from '$lib/data/domains.js';
 	export let domain;
-
-  const domainsList = [
-    'antifamail.org',
-    'blackcats.party',
-    'bum.su',
-    'emilie.fun',
-    'emilie.pm',
-    'e-pals.party',
-    'lust.sx',
-    'lustess.com',
-    'lustfulslut.com',
-    'testtube.work'
-  ];
 
   // Fisher-Yates x Durstenfeld
   function shuffle(array) {
@@ -21,15 +10,19 @@
       [array[i], array[j]] = [array[j], array[i]];
     }
   }
-
   shuffle(domainsList);
+
+  let filteredDomainsList = [];
+  onMount(() => {
+    filteredDomainsList = domainsList.filter(element => element.name !== domain);
+  })
 </script>
 
 <section>
-  <h2>Other domains for sale ({domainsList.length - 1})</h2>
+  <h2>Other domains for sale ({filteredDomainsList.length})</h2>
   <ul id="domains-list">
-    { #each domainsList as domainName }
-      <li class:hide={domainName === domain}><a href="https://{domainName}" target="_blank">{domainName}</a></li>
+    { #each filteredDomainsList as domain }
+      <li><a href="https://{domain.name}" target="_blank">{domain.name}</a></li>
     { /each }
   </ul>
 </section>
@@ -50,9 +43,5 @@
 
   a {
     font-family: monospace;
-  }
-
-  .hide {
-    display: none;
   }
 </style>
