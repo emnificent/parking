@@ -26,7 +26,7 @@
 <section>
   <div class="list__header">
     <label for="dropdown-button">
-      <h2>Other domains for sale ({filteredDomainsList.length})</h2>
+      <h2>Other domains for sale&nbsp;({filteredDomainsList.length})</h2>
     </label>
 
     <input type="checkbox" id="dropdown-button" class="dropdown-button" aria-label="expand/collapse list" on:change={expandCollapseList}>
@@ -61,8 +61,8 @@
   .list__header {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
     justify-content: space-between;
+    gap: 1rem;
     margin-bottom: 1rem;
 
     @media screen and (width >= 1280px) {
