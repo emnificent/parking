@@ -1,5 +1,7 @@
 const domains = [
+  { name: 'anaranar.com', price: 396 },
   { name: 'antifamail.org', price: 198 },
+  { name: 'antifapost.com', price: 198 },
   { name: 'blackcats.party', price: 198 },
   { name: 'bum.su', price: 742 },
   { name: 'emilie.fun', price: 132 },
@@ -8,6 +10,7 @@ const domains = [
   { name: 'lust.sx', price: 992 },
   { name: 'lustess.com', price: 990 },
   { name: 'lustfulslut.com', price: 1979 },
+  { name: 'struggleunion.com', price: 198 },
   { name: 'testtube.work', price: 66 }
 ];
 
