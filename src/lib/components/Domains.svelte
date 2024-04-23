@@ -23,7 +23,7 @@
   }
 </script>
 
-<section>
+<section class:expanded={closed === false}>
   <div class="list__header">
     <label for="dropdown-button">
       <h2>Other domains for sale&nbsp;({filteredDomainsList.length})</h2>
@@ -42,6 +42,50 @@
 </section>
 
 <style lang="scss">
+  section {
+    background-color: var(--c-primary);
+    padding: 1rem 1rem 0 1rem;
+    border-radius: 1rem;
+    transition: all 0.3s;
+
+    & h2 {
+      color: var(--c-dark);
+      transition: color 0.3s;
+    }
+
+    &.expanded {
+      background-color: var(--c-dark--deeper);
+      padding: 1rem;
+
+      @media (prefers-color-scheme: light) {
+        background-color: var(--c-light--lighter);
+      }
+
+      @media (prefers-color-scheme: dark) {
+        & h2 {
+          color: var(--c-light);
+        }
+
+        & .dropdown-button {
+          &::before,
+          &::after {
+            background-color: var(--c-light);
+          }
+        }
+      }
+    }
+
+    @media screen and (width >= 992px) {
+      background-color: transparent;
+
+      @media (prefers-color-scheme: dark) {
+        & h2 {
+          color: var(--c-light);
+        }
+      }
+    }
+  }
+
   h2 {
     font-weight: var(--fw--bold);
     font-size: var(--fs-title--small);
@@ -105,8 +149,8 @@
       height: 20px;
       width: 4px;
       border-radius: 2px;
-      background-color: var(--c-light);
-      transition: rotate 0.3s;
+      background-color: var(--c-dark);
+      transition: rotate 0.3s, background-color 0.3s;
     }
 
     &::before {
