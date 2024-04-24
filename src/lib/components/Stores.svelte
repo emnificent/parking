@@ -68,8 +68,10 @@
 
       @media screen and (width >= 768px) {
         display: grid;
-        grid-template: auto / repeat(3, 1fr);
-        grid-template-areas: "dan sedo negotiate";
+        grid-template: auto / repeat(2, 1fr);
+        grid-template-areas:
+          "sedo sedo"
+          "dan negotiate";
 
         & .sedo {
           grid-area: sedo;
