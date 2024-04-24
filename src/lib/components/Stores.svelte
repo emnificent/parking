@@ -18,9 +18,9 @@
     <li class="sedo">
       <article>
         <h3>Buy through Sedo</h3>
-        <p>If you don't want to reward GoDaddy's anti-competitive practices</p>
+        <p>Don't reward GoDaddy's anticompetitive practices</p>
         <a href="https://sedo.com/search/details/?domain={domain}" target="_blank">Buy now</a>
-        <p class="disclaimer">Sedo takes time to list a domain, if you land on the brokerage service page, come back here in 48h, the link should work by then</p>
+        <p class="disclaimer">Sedo takes time to list a domain, if you land on the brokerage service page, come back here in 48h, the link should work by then<br /><br />you could also <a href="/contact" class="link">send me a message</a></p>
       </article>
     </li>
     <li class="dan">
@@ -28,14 +28,15 @@
         <h3>Buy through Dan</h3>
         <p>If you rather trust GoDaddy</p>
         <a href="https://dan.com/buy-domain/{domain}" target="_blank">Buy now</a>
-        <p class="disclaimer">higher fees = costlier <br /> usually around +9%</p>
+        <p class="disclaimer">higher fees = costlier<br />usually around +9%</p>
       </article>
     </li>
     <li class="negotiate">
       <article>
         <h3>Negotiate</h3>
-        <p>You have an interesting project idea but the domain is too expensive?</p>
+        <p>Get a discount with a good project idea!</p>
         <a href="/contact">Send me a message</a>
+        <p class="disclaimer">I won't steal your idea<br />read below</p>
       </article>
     </li>
   </ul>
@@ -175,5 +176,19 @@
 
   .disclaimer {
     font-size: var(--fs-text--small);
+
+    & .link {
+      padding: 0;
+      font-weight: var(--fw);
+      background-color: transparent;
+      color: var(--c-dark--deeper);
+      text-decoration: underline;
+
+      &:hover,
+      &:focus {
+        background-color: transparent;
+        color: var(--c-light--lighter);
+      }
+    }
   }
 </style>
