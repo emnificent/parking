@@ -73,6 +73,11 @@
           }
         }
       }
+
+      @media screen and (width >= 992px) {
+        background-color: transparent;
+        padding: 0;
+      }      
     }
 
     @media screen and (width >= 992px) {
