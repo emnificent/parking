@@ -14,7 +14,7 @@
 
   let filteredDomainsList = [];
   onMount(() => {
-    filteredDomainsList = domainsList.filter(element => element.name !== domain);
+    filteredDomainsList = domainsList.filter(element => element.name !== domain && element.name !== 'localhost');
   })
 
   let closed = true;
