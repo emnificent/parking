@@ -11,7 +11,8 @@ const domains = [
   { name: 'lustess.com', price: 1979 },
   { name: 'lustfulslut.com', price: 1979 },
   { name: 'struggleunion.com', price: 198 },
-  { name: 'testtube.work', price: 66 }
+  { name: 'testtube.work', price: 66 },
+  { name: 'localhost', price: 0 }
 ];
 
 export default domains;

@@ -18,15 +18,15 @@
     <li class="sedo">
       <article>
         <h3>Buy through Sedo</h3>
-        <p>Don't reward GoDaddy's anticompetitive practices</p>
+        <p>Support ethical business practices</p>
         <a href="https://sedo.com/search/details/?domain={domain}" target="_blank">Buy now</a>
-        <p class="disclaimer">Sedo takes time to list a domain, if you land on the brokerage service page, come back here in 48h, the link should work by then<br /><br />you could also <a href="/contact" class="link">send me a message</a></p>
+        <p class="disclaimer">Sedo takes time to list a domain, if you land on their brokerage service, wait 96h (max), the link should work by then<br /><br />or <a href="/contact" class="link">buy now through escrow</a><br />if you really don't want to wait</p>
       </article>
     </li>
     <li class="dan">
       <article>
-        <h3>Buy through Dan</h3>
-        <p>If you rather trust GoDaddy</p>
+        <h3>Buy through GoDaddy</h3>
+        <p>Anticompetitive but well&#8209known</p>
         <a href="https://dan.com/buy-domain/{domain}" target="_blank">Buy now</a>
         <p class="disclaimer">higher fees = costlier<br />usually around +9%</p>
       </article>
@@ -34,9 +34,9 @@
     <li class="negotiate">
       <article>
         <h3>Negotiate</h3>
-        <p>Get a discount with a good project idea!</p>
+        <p>Creative projects are rewarded!</p>
         <a href="/contact">Send me a message</a>
-        <p class="disclaimer">I won't steal your idea<br />read below</p>
+        <p class="disclaimer">I won't steal your idea<br />why? read below</p>
       </article>
     </li>
   </ul>
