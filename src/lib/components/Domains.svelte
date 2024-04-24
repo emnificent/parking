@@ -77,6 +77,7 @@
 
     @media screen and (width >= 992px) {
       background-color: transparent;
+      padding: 0;
 
       @media (prefers-color-scheme: dark) {
         & h2 {
