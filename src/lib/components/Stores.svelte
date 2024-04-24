@@ -16,12 +16,14 @@
   </div>
   <ul>
     <li class="sedo">
-      <article>
-        <h3>Buy through Sedo</h3>
-        <p>Support ethical business practices</p>
-        <a href="https://sedo.com/search/details/?domain={domain}" target="_blank">Buy now</a>
-        <p class="disclaimer">Sedo takes time to list a domain, if you land on their brokerage service, wait 96h (max) and try again</p>
-      </article>
+      <div class="sedo-content">
+        <article>
+          <h3>Buy through Sedo</h3>
+          <p>Support ethical business practices</p>
+          <a href="https://sedo.com/search/details/?domain={domain}" target="_blank">Buy now</a>
+          <p class="disclaimer">Sedo takes time to list a domain, if you land on their brokerage service, wait 96h (max) and try again</p>
+        </article>
+      </div>
     </li>
     <li class="dan">
       <article>
@@ -68,10 +70,10 @@
 
       @media screen and (width >= 768px) {
         display: grid;
-        grid-template: auto / repeat(4, 1fr);
+        grid-template: auto / repeat(2, 1fr);
         grid-template-areas:
-          "empty-a sedo sedo empty-b"
-          "dan dan negotiate negotiate";
+          "sedo sedo"
+          "dan negotiate";
 
         & .sedo {
           grid-area: sedo;
@@ -138,6 +140,24 @@
   
       &:nth-child(3) article {
         border-radius: 0 1rem 1rem 0;
+      }
+    }
+  }
+
+  .sedo-content {
+    display: contents;
+
+    @media screen and (width >= 768px) and (width < 992px) {
+      display: grid;
+      grid-template: auto / repeat(5, 1fr);
+      grid-template-areas: "empty-a content content content empty-b";
+      background-color: var(--c-primary);
+      border-radius: 1rem;
+      padding: 1rem;
+
+      & article {
+        grid-area: content;
+        padding: 0;
       }
     }
   }
