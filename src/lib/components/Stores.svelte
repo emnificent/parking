@@ -20,7 +20,7 @@
         <h3>Buy through Sedo</h3>
         <p>Support ethical business practices</p>
         <a href="https://sedo.com/search/details/?domain={domain}" target="_blank">Buy now</a>
-        <p class="disclaimer">Sedo takes time to list a domain, if you land on their brokerage service, wait 96h (max), the link should work by then<br /><br />or <a href="/contact" class="link">buy now through escrow</a><br />if you really don't want to wait</p>
+        <p class="disclaimer">Sedo takes time to list a domain, if you land on their brokerage service, wait 96h (max) and try again</p>
       </article>
     </li>
     <li class="dan">
@@ -68,10 +68,10 @@
 
       @media screen and (width >= 768px) {
         display: grid;
-        grid-template: auto / repeat(2, 1fr);
+        grid-template: auto / repeat(4, 1fr);
         grid-template-areas:
-          "sedo sedo"
-          "dan negotiate";
+          "empty-a sedo sedo empty-b"
+          "dan dan negotiate negotiate";
 
         & .sedo {
           grid-area: sedo;
@@ -94,8 +94,8 @@
 
       @media screen and (width >= 992px) {
         padding-inline: 16rem;
-        grid-template: auto / repeat(7, 1fr);
-        grid-template-areas: "dan dan sedo sedo sedo negotiate negotiate";
+        grid-template: auto / repeat(10, 1fr);
+        grid-template-areas: "dan dan dan sedo sedo sedo sedo negotiate negotiate negotiate";
         gap: 0;
       }
     }
@@ -120,14 +120,18 @@
     }
 
     @media screen and (width >= 992px) {
-      height: 16rem;
+      height: 15rem;
       position: relative;
-      top: 1.5rem;
+      top: 2.5rem;
     }
   }
 
   li {
     @media screen and (width >= 992px) {
+      &:nth-child(1) article {
+        border-radius: 1rem 1rem 0 0;
+      }
+
       &:nth-child(2) article {
         border-radius: 1rem 0 0 1rem;
       }
@@ -144,14 +148,18 @@
       color: var(--c-dark--deeper);
 
       @media screen and (width >= 992px) {
-        height: 24rem;
+        height: 20rem;
         top: 0;
+
+        & .disclaimer {
+          margin-bottom: 1.5rem;
+        }
       }
 
       & a {
         text-decoration: none;
         font-weight: var(--fw--bold);
-        color: var(--c-dark);
+        color: var(--c-dark--deeper);
         background-color: var(--c-light);
         border-radius: 0.5rem;
         padding-block: 0.5rem;
@@ -188,6 +196,7 @@
 
       &:hover,
       &:focus {
+        text-decoration: transparent;
         background-color: transparent;
         color: var(--c-light--lighter);
       }
