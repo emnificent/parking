@@ -92,9 +92,14 @@
     }
   }
 
+  label {
+    width: 100%;
+  }
+
   h2 {
     font-weight: var(--fw--bold);
     font-size: var(--fs-title--small);
+    margin-right: 1rem;
   }
 
   ul {
@@ -102,6 +107,11 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
+
+    @media screen and (width >= 768px) and (width < 992px) {
+      display: grid;
+      grid-template: auto / repeat(2, 1fr);
+    }
   }
 
   a {
@@ -112,7 +122,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 1rem;
     margin-bottom: 1rem;
 
     @media screen and (width >= 1280px) {
