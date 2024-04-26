@@ -1,6 +1,44 @@
-// client-side render instead of server-side
-export const ssr = false;
-export const csr = true;
+// manage form
+import { fail } from '@sveltejs/kit';
 
-// makes hostname related tasks simpler
-// besides we don't care about SEO here
+export const actions = {
+  default: async ({ request }) => {
+    const data = await request.formData();
+    if (!data.get('domain') || !data.get('email') || !data.get('message')) return;
+
+    const body = {
+      username: 'Domain purchase offer',
+      content: `# ${data.get('domain')}\nEmail: ${data.get('email')}\n${data.get('message')}`
+    };
+
+    const options = {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(body),
+    };
+  
+    try {
+      // please don't abuse the link, generate a new one when replacing with a .env
+      const response = await fetch('https://discord.com/api/webhooks/1164582023344705576/Awp2CKUZJrYaDG89NSfIfkBkcE46vig74maxEHuttQ5czTDYGj1VCsuz9xs7eyIk4HBH', options);
+  
+      if (!response.ok) {
+        return fail(500, {
+          error: true,
+          details: {
+            status: response.status,
+            message: response.statusText,
+          },
+        });
+      }
+      return {success: true};
+    } catch (error) {
+      return fail(500, {
+        error: true,
+        details: error,
+      });
+    }
+  }
+}

@@ -15,177 +15,169 @@
   let filteredDomainsList = [];
   onMount(() => {
     filteredDomainsList = domainsList.filter(element => element.name !== domain && element.name !== 'localhost');
-  })
 
-  let closed = true;
-  function expandCollapseList() {
-    closed = !closed
+    const container = document.getElementById('bubbles-container');
+    // generate 256 bubbles
+    for (let i = 0; i < 256; i++) {
+      let bubble = document.createElement('span');
+      // [-25; 100]
+      const top = `top:${randomInt(125) - 25}%`;
+      const left = `left:${randomInt(125) - 25}%`;
+      // [4; 24]
+      const width = `width:${randomInt(20) + 4}px`;
+      const animation = ['normal', 'reverse'];
+      // [0; 30]
+      const animationDelay = `animation-delay:-${randomInt(48)}s`
+
+      bubble.setAttribute('style', `${top}; ${left}; ${width}; ${animationDelay}`);
+      bubble.classList.add('bubble',
+        `bubble-${animation[Math.floor(Math.random() * animation.length)]}`
+      );
+
+      container.appendChild(bubble);
+    }
+  });
+
+  // [0; seed]
+  function randomInt(seed) {
+    return Math.floor(Math.random() * (seed + 1))
   }
 </script>
 
-<section class:expanded={closed === false}>
-  <div class="list__header">
-    <label for="dropdown-button">
-      <h2>Other domains for sale&nbsp;({filteredDomainsList.length})</h2>
-    </label>
-
-    <input type="checkbox" id="dropdown-button" class="dropdown-button" aria-label="expand/collapse list" on:change={expandCollapseList}>
+<section>
+  <div class="title-container">
+    <h2>More gems</h2>
   </div>
+  <ul id="domains-list" class="list-content">
+    { #each filteredDomainsList as domain }
+      <li><a href="https://{domain.name}" target="_blank">{domain.name}</a></li>
+    { /each }
+  </ul>
 
-  <div class="list-content__wrapper" class:closed>
-    <ul id="domains-list" class="list-content">
-      { #each filteredDomainsList as domain }
-        <li><a href="https://{domain.name}" target="_blank">{domain.name}</a></li>
-      { /each }
-    </ul>
+  <div class="bubbles-container" id="bubbles-container">
+
   </div>
 </section>
 
 <style lang="scss">
   section {
-    background-color: var(--c-primary);
-    padding: 1rem 1rem 0 1rem;
-    border-radius: 1rem;
-    transition: all 0.3s;
+    background-color: var(--c-background--bold);
+    padding: 32px;
+    border-radius: 16px;
+    position: relative;
 
-    & h2 {
-      color: var(--c-dark);
-      transition: color 0.3s;
-    }
-
-    &.expanded {
-      background-color: var(--c-dark--deeper);
-      padding: 1rem;
-
-      @media (prefers-color-scheme: light) {
-        background-color: var(--c-light--lighter);
-      }
-
-      @media (prefers-color-scheme: dark) {
-        & h2 {
-          color: var(--c-light);
-        }
-
-        & .dropdown-button {
-          &::before,
-          &::after {
-            background-color: var(--c-light);
-          }
-        }
-      }
-
-      @media screen and (width >= 992px) {
-        background-color: transparent;
-        padding: 0;
-      }      
-    }
-
-    @media screen and (width >= 992px) {
-      background-color: transparent;
-      padding: 0;
-
-      @media (prefers-color-scheme: dark) {
-        & h2 {
-          color: var(--c-light);
-        }
+    &:hover,
+    &:focus-within {
+      & .bubble {
+        opacity: 0;
       }
     }
   }
 
-  label {
-    width: 100%;
+  .title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   h2 {
-    font-weight: var(--fw--bold);
+    font-family: 'Climate Crisis', sans-serif;
     font-size: var(--fs-title--small);
-    margin-right: 1rem;
+    margin-bottom: 20px;
+    padding: 4px 16px;
+    width: fit-content;
+    border-radius: 8px;
+    background-color: var(--c-background--bold);
+    box-shadow: 
+      var(--c-background--bold) 8px 8px 16px, 
+      var(--c-background--bold) -8px -8px 16px;
+      position: relative;
+      z-index: 9999;
+      
+    @media screen and (width >= 768px) {
+      font-size: var(--fs-title);
+    }
   }
 
   ul {
-    list-style-position: inside;
+    list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    align-items: center;
+    gap: 16px;
+    position: relative;
+    z-index: 9999;
 
-    @media screen and (width >= 768px) and (width < 992px) {
+    @media screen and (width >= 768px) {
       display: grid;
       grid-template: auto / repeat(2, 1fr);
+      gap: 20px 32px;
     }
+    
+    @media screen and (width >= 1280px) {
+      grid-template: auto / repeat(4, 1fr);
+    }
+  }
+
+  li {
+    padding: 2px 10px;
+    width: fit-content;
+    border-radius: 8px;
+    background-color: var(--c-background--bold);
+    box-shadow: 
+      var(--c-background--bold) 4px 4px 8px, 
+      var(--c-background--bold) -4px -4px 8px;
   }
 
   a {
-    font-family: monospace;
+    font-family: 'Roboto Mono', monospace;
   }
 
-  .list__header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 1rem;
-
-    @media screen and (width >= 1280px) {
-      & input {
-        display: none;
-      }
-    }
-  }
-
-  /* list dropdown animation */
-  .list-content__wrapper {
-    display: grid;
-    grid-template-rows: 1fr;
-    transition: all 0.3s;
-
-    &.closed {
-      grid-template-rows: 0fr;
-    }
-
-    @media screen and (width >= 1280px) {
-      display: contents;
-    }
-  }
-  .list-content {
+  .bubbles-container {
+    position: absolute;
+    width: calc(100% - 32px);
+    height: calc(100% - 32px);
+    top: 16px;
+    left: 16px;
+    border-radius: 8px;
+    z-index: 99;
     overflow: hidden;
-  }
 
-  .dropdown-button {
-    appearance: none;
-    position: relative;
-    height: 2rem;
-    width: 2rem;
-
-    &::before,
     &::after {
       content: '';
       position: absolute;
-      top: 50%;
-      translate: 0 -50%;
-      height: 20px;
-      width: 4px;
-      border-radius: 2px;
-      background-color: var(--c-dark);
-      transition: rotate 0.3s, background-color 0.3s;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 999;
+      box-shadow: 
+        var(--c-background--bold) 8px 8px 16px inset, 
+        var(--c-background--bold) -8px -8px 16px inset;
     }
+  }
 
-    &::before {
-      left: 62%;
-      rotate: -45deg;
+  :global(.bubble) {
+    position: absolute;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-color: var(--c-primary);
+    filter: blur(6px);
+    animation: circular-motion 48s linear infinite;
+    opacity: 0.6;
+    transition: opacity 0.6s;
+  }
+
+  :global(.bubble-reverse) {
+    animation-direction: reverse;
+  }
+
+  @keyframes circular-motion {
+    from {
+      transform: rotate(0deg) translate(128px) rotate(0deg);
     }
-
-    &::after {
-      right: 62%;
-      rotate: 45deg;
-    }
-
-    &:checked {
-      &::before {
-        rotate: 45deg;
-      }
-
-      &::after {
-        rotate: -45deg;
-      }
+    to {
+      transform: rotate(360deg) translate(128px) rotate(-360deg);
     }
   }
 </style>
