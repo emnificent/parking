@@ -12,6 +12,9 @@ const domains = [
   { name: 'lustfulslut.com', price: { sedo: 3299, dan: 3853 } },
   { name: 'struggleunion.com', price: { sedo: 198, dan: 216 } },
   { name: 'testtube.work', price: { sedo: 66, dan: 100 } },
+
+  // useful for the preview
+  { name: 'parking-cg0.pages.dev', price: { sedo: 20, dan: 100 } },
   // useful when coding
   { name: 'localhost', price: { sedo: 20, dan: 100 } }
 ];

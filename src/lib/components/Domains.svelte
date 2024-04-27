@@ -14,7 +14,11 @@
 
   let filteredDomainsList = [];
   onMount(() => {
-    filteredDomainsList = domainsList.filter(element => element.name !== domain && element.name !== 'localhost');
+    filteredDomainsList = domainsList.filter(element => 
+      element.name !== domain 
+      && element.name !== 'parking-cg0.pages.dev'
+      && element.name !== 'localhost'
+    );
 
     const container = document.getElementById('bubbles-container');
     // generate 256 bubbles
@@ -54,9 +58,7 @@
     { /each }
   </ul>
 
-  <div class="bubbles-container" id="bubbles-container">
-
-  </div>
+  <div class="bubbles-container" id="bubbles-container"></div>
 </section>
 
 <style lang="scss">
