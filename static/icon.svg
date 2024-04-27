@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="512"
+   height="512"
+   viewBox="0 0 135.46666 135.46667"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <mask
+       maskUnits="userSpaceOnUse"
+       id="mask24">
+      <g
+         id="g28">
+        <rect
+           style="display:inline;fill:#ffffff;fill-opacity:1;stroke-width:0.257083"
+           id="rect24"
+           width="372.53333"
+           height="372.53333"
+           x="-118.53333"
+           y="-118.53333" />
+        <g
+           id="g27">
+          <circle
+             style="fill:#000000;fill-opacity:1;stroke-width:0.279135"
+             id="circle24"
+             cx="-50.800003"
+             cy="67.73333"
+             r="67.73333" />
+          <circle
+             style="fill:#000000;fill-opacity:1;stroke-width:0.279135"
+             id="circle25"
+             cx="186.26666"
+             cy="67.73333"
+             r="67.73333" />
+          <circle
+             style="fill:#000000;fill-opacity:1;stroke-width:0.279135"
+             id="circle26"
+             cx="67.73333"
+             cy="-50.800003"
+             r="67.73333" />
+          <circle
+             style="fill:#000000;fill-opacity:1;stroke-width:0.279135"
+             id="circle27"
+             cx="67.73333"
+             cy="186.26666"
+             r="67.73333" />
+        </g>
+      </g>
+    </mask>
+  </defs>
+  <g
+     id="layer1">
+    <circle
+       style="fill:#ccff00;fill-opacity:1;stroke-width:0.279135"
+       id="path1"
+       cx="67.73333"
+       cy="67.73333"
+       r="67.73333"
+       mask="url(#mask24)" />
+  </g>
+</svg>
