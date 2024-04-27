@@ -7,6 +7,8 @@
   let domain = $page.url.hostname;
 
   export let form;
+
+  const year = new Date().getFullYear();
 </script>
 
 <svelte:head>
@@ -25,7 +27,9 @@
   <Domains {domain} />
 </main>
 
-<footer></footer>
+<footer>
+  <p> © {year} <a href="https://dev.emnificent.com" target="_blank">emnificent</a></p>
+</footer>
 
 <style lang="scss">
   header {
@@ -65,18 +69,6 @@
     }
   }
 
-  footer {
-    height: 16px;
-
-    @media screen and (width >= 768px) {
-      height: 24px;
-    }
-
-    @media screen and (width >= 1280px) {
-      height: 32px;
-    }
-  }
-
   main {
     display: flex;
     flex-direction: column;
@@ -89,5 +81,42 @@
     @media screen and (width >= 1280px) {
       gap: 160px;
     }
+  }
+
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-block: 16px 8px;
+
+    @media screen and (width >= 768px) {
+      padding-top: 24px;
+    }
+
+    @media screen and (width >= 1280px) {
+      padding-top: 32px;
+    }
+
+    & p {
+      font-size: var(--fs-text--small);
+      opacity: 0.5;
+    }
+
+    & a {
+      &:hover,
+      &:focus {
+        color: var(--c-text);
+        outline: none;
+      }
+    }
+
+    /* everything below keeps the footer where it belongs */
+    margin-top: auto;
+  }
+
+  :global(body) {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
   }
 </style>
