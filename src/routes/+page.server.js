@@ -21,7 +21,7 @@ export const actions = {
     };
   
     try {
-      // please don't abuse the link, generate a new one when replacing with a .env
+      // please don't abuse the hook, thanks
       const response = await fetch('https://discord.com/api/webhooks/1164582023344705576/Awp2CKUZJrYaDG89NSfIfkBkcE46vig74maxEHuttQ5czTDYGj1VCsuz9xs7eyIk4HBH', options);
   
       if (!response.ok) {
