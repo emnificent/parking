@@ -7,7 +7,7 @@ const domains = [
   { name: 'e-pals.party', price: { sedo: 27, dan: 100 } },
   { name: 'emilie.fun', price: { sedo: 99, dan: 108 } },
   { name: 'emilie.pm', price: { sedo: 262, dan: 100 } },
-  { name: 'lust.sx', price: { sedo: 929, dan: 985 } },
+  { name: 'lust.sx', price: { sedo: 932, dan: 990 } },
   { name: 'lustfulslut.com', price: { sedo: 3272, dan: 3822 } },
   { name: 'struggleunion.com', price: { sedo: 99, dan: 108 } },
   { name: 'testtube.work', price: { sedo: 40, dan: 100 } },
