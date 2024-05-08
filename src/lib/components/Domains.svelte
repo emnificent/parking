@@ -93,8 +93,8 @@
     box-shadow: 
       var(--c-background--bold) 8px 8px 16px, 
       var(--c-background--bold) -8px -8px 16px;
-      position: relative;
-      z-index: 9999;
+    position: relative;
+    z-index: 9999;
       
     @media screen and (width >= 768px) {
       font-size: var(--fs-title);
