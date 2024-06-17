@@ -6,6 +6,7 @@ const domains = [
   { name: 'bum.su', price: { sedo: 742, dan: 717 } },
   { name: 'emilie.fun', price: { sedo: 99, dan: 108 } },
   { name: 'emilie.pm', price: { sedo: 262, dan: 100 } },
+  { name: 'emiliecodes.com', price: { sedo: 99, dan: 108 } },
   { name: 'lust.sx', price: { sedo: 932, dan: 990 } },
   { name: 'lustfulslut.com', price: { sedo: 3272, dan: 3822 } },
   { name: 'struggleunion.com', price: { sedo: 99, dan: 108 } },
