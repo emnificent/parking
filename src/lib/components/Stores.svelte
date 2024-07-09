@@ -107,8 +107,8 @@
     }
 
     & .price {
-      font-family: 'Climate Crisis', sans-serif;
       font-size: var(--fs-title--small);
+      font-weight: var(--fw--bold);
       
       @media screen and (width >= 768px) {
         font-size: var(--fs-title);
