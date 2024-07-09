@@ -145,6 +145,7 @@
     }
   }
 
+  /* disclaimer message / no longer needed
   .sedo {
     position: relative;
 
@@ -171,4 +172,5 @@
       }
     }
   }
+  */
 </style>
