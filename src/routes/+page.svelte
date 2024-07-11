@@ -3,18 +3,15 @@
 	import Negotiate from '$lib/components/Negotiate.svelte';
 	import Domains from '$lib/components/Domains.svelte';
 
-  import { page } from '$app/stores';
-  let domain = $page.url.hostname;
-
   export let form;
 </script>
 
 <main>
-  <Stores {domain} />
+  <Stores/>
 
-  <Negotiate {domain} {form} />
+  <Negotiate {form} />
 
-  <Domains {domain} />
+  <Domains />
 </main>
 
 <style lang="scss">

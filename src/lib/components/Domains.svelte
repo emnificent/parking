@@ -1,7 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
   import domainsList from '$lib/data/domains.js';
-	export let domain;
 
   // Fisher-Yates x Durstenfeld
   function shuffle(array) {
@@ -12,14 +11,11 @@
   }
   shuffle(domainsList);
 
-  let filteredDomainsList = [];
-  onMount(() => {
-    filteredDomainsList = domainsList.filter(element => 
-      element.name !== domain 
-      && element.name !== 'parking-cg0.pages.dev'
-      && element.name !== 'localhost'
-    );
+  import domainStore from '$lib/store/domainStore.js';
+  $: filteredDomainsList = domainsList.filter(element => element.name !== $domainStore);
 
+  // generate the background bubbles
+  onMount(() => {
     const container = document.getElementById('bubbles-container');
     // generate 256 bubbles
     for (let i = 0; i < 256; i++) {
@@ -48,18 +44,20 @@
   }
 </script>
 
-<section>
-  <div class="title-container">
-    <h2>More gems</h2>
-  </div>
-  <ul id="domains-list" class="list-content">
-    { #each filteredDomainsList as domain }
-      <li><a href="https://{domain.name}" target="_blank">{domain.name}</a></li>
-    { /each }
-  </ul>
+{ #if filteredDomainsList.length > 0 }
+  <section>
+    <div class="title-container">
+      <h2>More gems</h2>
+    </div>
+    <ul id="domains-list" class="list-content">
+      { #each filteredDomainsList as domain }
+        <li><a href="https://{domain.name}" target="_blank">{domain.name}</a></li>
+      { /each }
+    </ul>
 
-  <div class="bubbles-container" id="bubbles-container"></div>
-</section>
+    <div class="bubbles-container" id="bubbles-container"></div>
+  </section>
+{ /if }
 
 <style lang="scss">
   section {

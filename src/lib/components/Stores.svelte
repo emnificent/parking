@@ -1,22 +1,19 @@
 <script>
-	import { onMount } from 'svelte';
+  import domainStore from '$lib/store/domainStore.js';
   import domainsList from '$lib/data/domains.js';
-  export let domain;
 
-  let domainPrice = 0;
-  onMount(() => {
-    domainPrice = domainsList.filter(element => element.name === domain)[0].price;
-  })
+  $: domainName = $domainStore;
+  $: domainPrice = domainsList.filter(domain => domain.name === $domainStore)[0]?.price;
 </script>
 
 <div>
   <ul>
     <li>
-      <a href="https://sedo.com/search/details/?domain={domain}" target="_blank" aria-label="Buy now for ${domainPrice.sedo}" class="sedo">
+      <a href="https://sedo.com/search/details/?domain={domainName}" target="_blank" aria-label="Buy now for ${domainPrice?.sedo}" class="sedo">
         <article>
           <div>
             <h2 class="store">Buy through Sedo</h2>
-            <p class="price">${domainPrice.sedo}</p>
+            <p class="price">${domainPrice?.sedo}</p>
           </div>
           <p class="fake-button">Buy now</p>
         </article>
@@ -24,11 +21,11 @@
       </a>
     </li>
     <li>
-      <a href="https://dan.com/buy-domain/{domain}" target="_blank" aria-label="Buy now for ${domainPrice.dan}">
+      <a href="https://dan.com/buy-domain/{domainName}" target="_blank" aria-label="Buy now for ${domainPrice?.dan}">
         <article>
           <div>
             <h2 class="store">Buy through GoDaddy</h2>
-            <p class="price">${domainPrice.dan}</p>
+            <p class="price">${domainPrice?.dan}</p>
           </div>
           <p class="fake-button">Buy now</p>
         </article>
@@ -107,11 +104,11 @@
     }
 
     & .price {
-      font-size: var(--fs-title--small);
+      font-size: var(--fs-title);
       font-weight: var(--fw--bold);
       
       @media screen and (width >= 768px) {
-        font-size: var(--fs-title);
+        font-size: var(--fs-title--large);
       }
     }
 
@@ -145,7 +142,7 @@
     }
   }
 
-  /* disclaimer message / no longer needed
+  /* disclaimer message / NO LONGER NEEDED
   .sedo {
     position: relative;
 

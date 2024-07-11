@@ -1,7 +1,9 @@
 <script>
   import { slide } from 'svelte/transition';
 
-  export let domain;
+  import domainStore from '$lib/store/domainStore.js';
+  $: domainName = $domainStore;
+  
   export let form;
 
   let displayForm = false;
@@ -16,7 +18,7 @@
 
   { #if displayForm }
     <form method="POST" transition:slide={{ duration: 300 }}>
-      <input type="text" name="domain" value={domain} readonly tabindex="-1" aria-hidden="true" class="screenreaders-only" />
+      <input type="text" name="domain" value={domainName} readonly tabindex="-1" aria-hidden="true" class="screenreaders-only" />
       <input type="email" name="email" placeholder="name@email.com" required />
       <textarea name="message" rows="5" placeholder="Describe your project and specify your budget" required></textarea>
       <button>Send me a message</button>

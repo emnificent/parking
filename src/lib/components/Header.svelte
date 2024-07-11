@@ -1,9 +1,10 @@
 <script>
-  export let domain;
+  import domainStore from '$lib/store/domainStore.js';
+  $: domainName = $domainStore;
 </script>
 
 <header>
-  <h1><span class="domain">{domain}</span><br />is for sale</h1>
+  <h1><span class="domain">{domainName}</span><br />is for sale</h1>
 </header>
 
 <style lang="scss">
