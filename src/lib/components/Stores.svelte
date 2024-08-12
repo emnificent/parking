@@ -21,16 +21,29 @@
       </a>
     </li>
     <li>
-      <a href="https://dan.com/buy-domain/{domainName}" target="_blank" aria-label="Buy now for ${domainPrice?.dan}">
-        <article>
-          <div>
-            <h2 class="store">Buy through GoDaddy</h2>
-            <p class="price">${domainPrice?.dan}</p>
-          </div>
-          <p class="fake-button">Buy now</p>
-        </article>
-        <p class="cta">BUY NOW</p>
-      </a>
+      { #if domainPrice?.dynadot > 0 }
+        <a href="https://dynadot.com/market/user-listings/{domainName}" target="_blank" aria-label="Buy now for ${domainPrice?.dynadot}">
+          <article>
+            <div>
+              <h2 class="store">Buy through Dynadot</h2>
+              <p class="price">${domainPrice?.dynadot}</p>
+            </div>
+            <p class="fake-button">Buy now</p>
+          </article>
+          <p class="cta">BUY NOW</p>
+        </a>
+      { :else }
+        <a href="/">
+          <article>
+            <div>
+              <h2 class="store">Buy through Dynadot</h2>
+              <p class="price">Unavailable</p>
+            </div>
+            <p class="fake-button">Unavailable</p>
+          </article>
+          <p></p>
+        </a>
+      { /if }
     </li>
   </ul>
 </div>
