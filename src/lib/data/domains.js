@@ -1,6 +1,5 @@
 const domains = [
   { name: 'anaranar.com', price: { sedo: 99, dynadot: 100 } },
-  { name: 'antifamail.org', price: { sedo: 99, dynadot: 100 } },
   { name: 'antifapost.com', price: { sedo: 99, dynadot: 100 } },
   { name: 'blackcats.party', price: { sedo: 99, dynadot: 100 } },
   { name: 'bum.su', price: { sedo: 742, dynadot: 0 } },
