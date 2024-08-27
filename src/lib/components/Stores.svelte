@@ -46,9 +46,18 @@
       { /if }
     </li>
   </ul>
+
+  <p class="disclaimer">We do not support GoDaddy because of their abusive practices.</p>
 </div>
 
 <style lang="scss">
+  .disclaimer {
+    text-align: center;
+    padding-top: 16px;
+    font-size: var(--fs-text--small);
+    opacity: 0.5;
+  }
+
   ul {
     list-style: none;
     display: flex;

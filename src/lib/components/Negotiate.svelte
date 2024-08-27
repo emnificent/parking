@@ -5,16 +5,17 @@
 
 <section>
   <h2>Negotiate</h2>
-  <p>Tight budget? No sweat, shoot me your project idea and your price point. If it tickles my fancy, we can talk discount! <span class="mobile-delete"><br /></span> Rumors say some even got their domain transfer for free?!</p>
+  <p>Tight budget? No sweat, shoot me your project idea and your price point. If it tickles my fancy, we can talk discount!</p>
 
   <a href="https://www.namepros.com/parked/{domainName}" target="_blank">Let's talk</a>
+
+  <p>Rumors say some even got their domain for free?!<br /><span class="disclaimer">(registrar transfer fee not covered)</span></p>
 </section>
 
 <style lang="scss">
-  .mobile-delete {
-    @media screen and (width < 768px) {
-      display: none;
-    }
+  .disclaimer {
+    font-size: var(--fs-text--small);
+    opacity: 0.5;
   }
 
   section {

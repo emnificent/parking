@@ -10,10 +10,10 @@
 <style lang="scss">
   header {
     text-align: center;
-    margin-block: 20px 128px;
+    margin-block: 20px 96px;
 
     @media screen and (width >= 768px) {
-      margin-bottom: 144px;
+      margin-bottom: 128px;
     }
 
     @media screen and (width >= 1280px) {
