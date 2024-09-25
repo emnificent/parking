@@ -81,7 +81,7 @@
   }
 
   h2 {
-    font-family: 'Climate Crisis', sans-serif;
+    font-family: 'Playfair Display', sans-serif;
     font-size: var(--fs-title--small);
     margin-bottom: 20px;
     padding: 4px 16px;

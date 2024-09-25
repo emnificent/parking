@@ -9,7 +9,7 @@
 <div>
   <ul>
     <li>
-      <a href="https://sedo.com/search/details/?domain={domainName}" target="_blank" aria-label="Buy now for ${domainPrice?.sedo}" class="sedo">
+      <a href="https://sedo.com/search/details/?domain={domainName}" target="_blank" aria-label="Buy now for ${domainPrice?.sedo} on Sedo">
         <article>
           <div>
             <h2 class="store">Buy through Sedo</h2>
@@ -17,12 +17,12 @@
           </div>
           <p class="fake-button">Buy now</p>
         </article>
-        <p class="cta">BUY NOW</p>
+        <p class="cta">Buy now</p>
       </a>
     </li>
     <li>
       { #if domainPrice?.dynadot > 0 }
-        <a href="https://dynadot.com/market/user-listings/{domainName}" target="_blank" aria-label="Buy now for ${domainPrice?.dynadot}">
+        <a href="https://dynadot.com/market/user-listings/{domainName}" target="_blank" aria-label="Buy now for ${domainPrice?.dynadot} on Dynadot">
           <article>
             <div>
               <h2 class="store">Buy through Dynadot</h2>
@@ -30,10 +30,10 @@
             </div>
             <p class="fake-button">Buy now</p>
           </article>
-          <p class="cta">BUY NOW</p>
+          <p class="cta">Buy now</p>
         </a>
       { :else }
-        <a href="/">
+        <a href="https://sedo.com/search/details/?domain={domainName}" target="_blank" aria-label="Sorry, the domain is unavailable on Dynadot, but you can still buy it on Sedo for ${domainPrice?.sedo}">
           <article>
             <div>
               <h2 class="store">Buy through Dynadot</h2>
@@ -41,7 +41,7 @@
             </div>
             <p class="fake-button">Unavailable</p>
           </article>
-          <p></p>
+          <p class="cta">Unavailable</p>
         </a>
       { /if }
     </li>
@@ -147,12 +147,13 @@
   }
 
   .cta {
-    font-family: 'Climate Crisis', sans-serif;
+    font-family: 'Playfair Display', sans-serif;
     font-size: 2.25rem;
     display: flex;
     align-items: center;
     justify-content: center;
     text-wrap: nowrap;
+    text-transform: uppercase;
     transition: color 0.3s;
 
     @media screen and (width >= 768px) {

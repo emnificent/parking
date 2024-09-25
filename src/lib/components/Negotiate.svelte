@@ -5,7 +5,7 @@
 
 <section>
   <h2>Negotiate</h2>
-  <p>Tight budget? No sweat, shoot me your project idea and your price point. If it tickles my fancy, we can talk discount!</p>
+  <p>Tight budget? No sweat, shoot me your price point and your project idea. If it tickles my fancy, we can talk discount!</p>
 
   <a href="https://www.namepros.com/parked/{domainName}" target="_blank">Let's talk</a>
 
@@ -30,7 +30,7 @@
 
   h2 {
     font-size: var(--fs-title--small);
-    font-family: 'Climate Crisis', sans-serif;
+    font-family: 'Playfair Display', sans-serif;
     
     @media screen and (width >= 768px) {
       font-size: var(--fs-title);

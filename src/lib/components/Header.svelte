@@ -29,7 +29,7 @@
       }
 
       & .domain {
-        font-family: 'Climate Crisis', sans-serif;
+        font-family: 'Playfair Display', sans-serif;
         font-weight: var(--fw);
         font-size: var(--fs-title--small);
         color: var(--c-primary);
