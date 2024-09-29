@@ -6,6 +6,7 @@ const domains = [
   { name: 'emiliecodes.com', price: { sedo: 99, dynadot: 100 } },
   { name: 'lust.sx', price: { sedo: 932, dynadot: 0 } },
   { name: 'lustfulslut.com', price: { sedo: 3272, dynadot: 2822 } },
+  { name: 'satancore.com', price: { sedo: 99, dynadot: 100 } },
   { name: 'struggleunion.com', price: { sedo: 99, dynadot: 100 } }
 ];
 
