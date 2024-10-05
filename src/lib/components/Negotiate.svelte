@@ -29,11 +29,11 @@
   }
 
   h2 {
-    font-size: var(--fs-title--small);
-    font-family: 'Playfair Display', sans-serif;
+    font-size: calc(var(--fs-title--small) + var(--chicle-fix));
+    font-family: 'Chicle', sans-serif;
     
     @media screen and (width >= 768px) {
-      font-size: var(--fs-title);
+      font-size: calc(var(--fs-title) + var(--chicle-fix));
     }
   }
 

@@ -126,11 +126,12 @@
     }
 
     & .price {
-      font-size: var(--fs-title);
+      font-size: calc(var(--fs-title) + var(--chicle-fix));
       font-weight: var(--fw--bold);
+      font-family: 'Chicle';
       
       @media screen and (width >= 768px) {
-        font-size: var(--fs-title--large);
+        font-size: calc(var(--fs-title--large) + var(--chicle-fix));
       }
     }
 
@@ -147,8 +148,8 @@
   }
 
   .cta {
-    font-family: 'Playfair Display', sans-serif;
-    font-size: 2.25rem;
+    font-family: 'Chicle', sans-serif;
+    font-size: calc(2.5rem + var(--chicle-fix));
     display: flex;
     align-items: center;
     justify-content: center;
@@ -157,11 +158,11 @@
     transition: color 0.3s;
 
     @media screen and (width >= 768px) {
-      font-size: 2.5rem;
+      font-size: calc(2.5rem + var(--chicle-fix));
     }
 
     @media screen and (width >= 1280px) {
-      font-size: 4.75rem;
+      font-size: calc(4.75rem + var(--chicle-fix));
     }
   }
 

@@ -29,17 +29,17 @@
       }
 
       & .domain {
-        font-family: 'Playfair Display', sans-serif;
+        font-family: 'Chicle', sans-serif;
         font-weight: var(--fw);
-        font-size: var(--fs-title--small);
+        font-size: calc(var(--fs-title--small) + var(--chicle-fix));
         color: var(--c-primary);
         
         @media screen and (width >= 768px) {
-          font-size: 3rem;
+          font-size: calc(3rem + var(--chicle-fix));
         }
 
         @media screen and (width >= 1280px) {
-          font-size: 5rem;
+          font-size: calc(5rem + var(--chicle-fix));
         }
       }
     }

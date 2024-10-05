@@ -81,8 +81,8 @@
   }
 
   h2 {
-    font-family: 'Playfair Display', sans-serif;
-    font-size: var(--fs-title--small);
+    font-family: 'Chicle', sans-serif;
+    font-size: calc(var(--fs-title--small) + var(--chicle-fix));
     margin-bottom: 20px;
     padding: 4px 16px;
     width: fit-content;
@@ -95,7 +95,7 @@
     z-index: 9999;
       
     @media screen and (width >= 768px) {
-      font-size: var(--fs-title);
+      font-size: calc(var(--fs-title) + var(--chicle-fix));
     }
   }
 
