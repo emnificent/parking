@@ -5,8 +5,8 @@
 	/* colors */
 	--c-primary: hsl(72, 100%, 50%);
 	--c-text: hsl(0, 0%, 91%);
-	--c-background: hsl(0, 0%, 9%);
-  --c-background--bold : hsl(0, 0%, 0%);
+	--c-background: hsl(72, 10%, 10%);
+  --c-background--bold : hsl(72, 10%, 5%);
 	--c-success: hsl(144, 100%, 50%);
 	--c-error: hsl(0, 100%, 50%);
 
@@ -29,7 +29,7 @@
 	--fw--bold: 700;
 	--fw--light: 200;
 
-	background-color: var(--c-background);
+	background-color: var(--c-background--bold);
 	color: var(--c-text);
 	font-family: 'Poppins', sans-serif;
 	line-height: 1;

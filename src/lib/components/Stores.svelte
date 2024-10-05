@@ -80,7 +80,7 @@
   }
 
   a {
-    background-color: var(--c-background--bold);
+    background-color: var(--c-background);
     border-radius: 16px;
     padding: 32px;
     text-decoration: none;
@@ -96,13 +96,10 @@
       gap: 0;
 
       & .fake-button {
-        background-color: var(--c-background--bold);
+        background-color: var(--c-background);
         margin-right: 32px;
-        border: 2px solid var(--c-background--bold);
-      }
-
-      & .cta {
-        color: var(--c-primary);
+        border: 2px solid var(--c-background);
+        color: var(--c-background);
       }
     }
 
@@ -145,7 +142,7 @@
       border-radius: 8px;
       margin-right: 0;
       border: 2px solid var(--c-primary);
-      transition: background-color 0.15s, margin-right 0.3s, border 0.15s;
+      transition: background-color 0.15s, margin-right 0.3s, border 0.15s, color 0.15s;
     }
   }
 
@@ -157,7 +154,7 @@
     justify-content: center;
     text-wrap: nowrap;
     text-transform: uppercase;
-    transition: color 0.3s;
+    color: var(--c-primary);
 
     @media screen and (width >= 768px) {
       font-size: calc(2.5rem + var(--chicle-fix));
