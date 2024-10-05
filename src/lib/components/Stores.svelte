@@ -98,6 +98,7 @@
       & .fake-button {
         background-color: var(--c-background--bold);
         margin-right: 32px;
+        border: 2px solid var(--c-background--bold);
       }
 
       & .cta {
@@ -143,7 +144,8 @@
       padding: 8px 16px;
       border-radius: 8px;
       margin-right: 0;
-      transition: background-color 0.15s, margin-right 0.3s;
+      border: 2px solid var(--c-primary);
+      transition: background-color 0.15s, margin-right 0.3s, border 0.15s;
     }
   }
 

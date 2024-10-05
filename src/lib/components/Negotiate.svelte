@@ -47,6 +47,7 @@
     padding: 8px 16px;
     border-radius: 8px;
     transition: all 0.3s;
+    line-height: 1.4;
 
     &:hover,
     &:focus {
