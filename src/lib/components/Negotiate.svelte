@@ -42,7 +42,7 @@
     width: fit-content;
     align-self: center;
     background-color: var(--c-primary);
-    color: var(--c-background--bold);
+    color: var(--c-background);
     font-weight: var(--fw--bold);
     padding: 8px 16px;
     border-radius: 8px;

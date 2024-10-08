@@ -80,7 +80,7 @@
   }
 
   a {
-    background-color: var(--c-background);
+    background-color: oklch(from var(--c-background) calc(l + 0.05) c h);
     border-radius: 16px;
     padding: 32px;
     text-decoration: none;
@@ -96,10 +96,10 @@
       gap: 0;
 
       & .fake-button {
-        background-color: var(--c-background);
+        background-color: oklch(from var(--c-background) calc(l + 0.05) c h);
         margin-right: 32px;
-        border: 2px solid var(--c-background);
-        color: var(--c-background);
+        border: 2px solid oklch(from var(--c-background) calc(l + 0.05) c h);
+        color: oklch(from var(--c-background) calc(l + 0.05) c h);
       }
     }
 
@@ -136,7 +136,7 @@
     & .fake-button {
       align-self: flex-end;
       background-color: var(--c-primary);
-      color: var(--c-background--bold);
+      color: var(--c-background);
       font-weight: var(--fw--bold);
       padding: 8px 16px;
       border-radius: 8px;

@@ -61,7 +61,7 @@
 
 <style lang="scss">
   section {
-    background-color: var(--c-background--bold);
+    background-color: var(--c-background);
     padding: 32px;
     border-radius: 16px;
     position: relative;
@@ -87,10 +87,10 @@
     padding: 4px 16px;
     width: fit-content;
     border-radius: 8px;
-    background-color: var(--c-background--bold);
+    background-color: var(--c-background);
     box-shadow: 
-      var(--c-background--bold) 8px 8px 16px, 
-      var(--c-background--bold) -8px -8px 16px;
+      var(--c-background) 8px 8px 16px, 
+      var(--c-background) -8px -8px 16px;
     position: relative;
     z-index: 9999;
       
@@ -123,10 +123,10 @@
     padding: 2px 10px;
     width: fit-content;
     border-radius: 8px;
-    background-color: var(--c-background--bold);
+    background-color: var(--c-background);
     box-shadow: 
-      var(--c-background--bold) 4px 4px 8px, 
-      var(--c-background--bold) -4px -4px 8px;
+      var(--c-background) 4px 4px 8px, 
+      var(--c-background) -4px -4px 8px;
   }
 
   a {
@@ -152,8 +152,8 @@
       height: 100%;
       z-index: 999;
       box-shadow: 
-        var(--c-background--bold) 8px 8px 16px inset, 
-        var(--c-background--bold) -8px -8px 16px inset;
+        var(--c-background) 8px 8px 16px inset, 
+        var(--c-background) -8px -8px 16px inset;
     }
   }
 
