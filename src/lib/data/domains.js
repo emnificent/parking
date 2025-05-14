@@ -10,6 +10,7 @@ const domains = [
   { name: 'operess.com', price: { sedo: 15568, dynadot: 13425 } },
   { name: 'pneumatube.com', price: { sedo: 21373, dynadot: 18431 } },
   { name: 'satancore.com', price: { sedo: 11610, dynadot: 10012 } },
+  { name: 'unbowedpress.com', price: { sedo: 8180, dynadot: 7054 } },
 ];
 
 export default domains;
