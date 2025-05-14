@@ -125,7 +125,6 @@
 
     & .price {
       font-size: var(--fs-title);
-      font-weight: var(--fw--bold);
       font-family: 'Ultra';
       
       @media screen and (width >= 768px) {
