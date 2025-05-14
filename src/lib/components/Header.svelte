@@ -29,17 +29,18 @@
       }
 
       & .domain {
-        font-family: 'Chicle', sans-serif;
+        font-family: 'Ultra', sans-serif;
         font-weight: var(--fw);
-        font-size: calc(var(--fs-title--small) + var(--chicle-fix));
+        font-size: var(--fs-title--small);
         color: var(--c-primary);
+        display: block;
         
         @media screen and (width >= 768px) {
-          font-size: calc(3rem + var(--chicle-fix));
+          font-size: 3rem;
         }
 
         @media screen and (width >= 1280px) {
-          font-size: calc(5rem + var(--chicle-fix));
+          font-size: 5rem;
         }
       }
     }

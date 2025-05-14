@@ -9,7 +9,7 @@
 
   <a href="https://www.namepros.com/parked/{domainName}" target="_blank">Let's talk</a>
 
-  <p>Rumors say some even got their domain for free?!<br /><span class="disclaimer">(registrar transfer fee not covered)</span></p>
+  <p class="disclaimer">Rumors say some even got their domain for free?!<br />(registrar transfer fee not covered)</p>
 </section>
 
 <style lang="scss">
@@ -29,11 +29,11 @@
   }
 
   h2 {
-    font-size: calc(var(--fs-title--small) + var(--chicle-fix));
-    font-family: 'Chicle', sans-serif;
+    font-size: var(--fs-title--small);
+    font-family: 'Ultra', sans-serif;
     
     @media screen and (width >= 768px) {
-      font-size: calc(var(--fs-title) + var(--chicle-fix));
+      font-size: var(--fs-title);
     }
   }
 

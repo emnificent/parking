@@ -81,8 +81,8 @@
   }
 
   h2 {
-    font-family: 'Chicle', sans-serif;
-    font-size: calc(var(--fs-title--small) + var(--chicle-fix));
+    font-family: 'Ultra', sans-serif;
+    font-size: var(--fs-title--small);
     margin-bottom: 20px;
     padding: 4px 16px;
     width: fit-content;
@@ -95,7 +95,7 @@
     z-index: 9999;
       
     @media screen and (width >= 768px) {
-      font-size: calc(var(--fs-title) + var(--chicle-fix));
+      font-size: var(--fs-title);
     }
   }
 
