@@ -5,11 +5,14 @@
 
 <section>
   <h2>Negotiate</h2>
-  <p>Tight budget? No sweat, shoot me your price point and your project idea. If it tickles my fancy, we can talk discount!</p>
+  <div>
+    <p>Share your projet and budget for a possible discount!</p>
+    <p>Rumors say some even got their domain for free 🤫</p>
+    <p class="disclaimer">(registrar transfer fee not covered)</p>
+  </div>
 
-  <a href="https://www.namepros.com/parked/{domainName}" target="_blank">Let's talk</a>
+  <a href="https://www.namepros.com/parked/{domainName}" target="_blank">Let's talk!</a>
 
-  <p class="disclaimer">Rumors say some even got their domain for free?!<br />(registrar transfer fee not covered)</p>
 </section>
 
 <style lang="scss">
@@ -19,10 +22,9 @@
   }
 
   section {
-    width: 90vw;
-    max-width: 640px;
-    margin-inline: auto;
-    text-align: center;
+    background-color: oklch(from var(--c-background) calc(l + 0.05) c h);
+    padding: 32px;
+    border-radius: 16px;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -31,32 +33,24 @@
   h2 {
     font-size: var(--fs-title--small);
     font-family: 'Ultra', sans-serif;
-    
+
     @media screen and (width >= 768px) {
       font-size: var(--fs-title);
     }
   }
 
   a {
-    border: 2px solid transparent;
-    width: fit-content;
-    align-self: center;
-    background-color: var(--c-primary);
-    color: var(--c-background);
+    background-color: oklch(from var(--c-background) calc(l + 0.1) c h);
     font-weight: var(--fw--bold);
-    padding: 8px 16px;
-    border-radius: 8px;
-    transition: all 0.3s;
-    line-height: 1.4;
+    padding: 16px;
+    border-radius: 16px;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
 
     &:hover,
-    &:focus {
-      color: var(--c-primary);
-      background-color: transparent;
-    }
-
-    &:hover {
-      border-color: var(--c-primary);
+    &:focus-visible {
+      color: var(--c-background);
+      background-color: var(--c-primary);
     }
   }
 </style>

@@ -10,15 +10,7 @@
 <style lang="scss">
   header {
     text-align: center;
-    margin-block: 20px 96px;
-
-    @media screen and (width >= 768px) {
-      margin-bottom: 128px;
-    }
-
-    @media screen and (width >= 1280px) {
-      margin-bottom: 160px;
-    }
+    margin-block: 48px 96px;
 
     & h1 {
       font-weight: var(--fw--bold);
