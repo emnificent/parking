@@ -5,13 +5,14 @@
 
 <section>
   <h2>Negotiate</h2>
-  <div>
-    <p>Share your projet and budget for a possible discount!</p>
-    <p>Rumors say some even got their domain for free 🤫</p>
-    <p class="disclaimer">(registrar transfer fee not covered)</p>
-  </div>
+  <p>Share your project and budget for a possible discount.</p>
 
   <a href="https://www.namepros.com/parked/{domainName}" target="_blank">Let's talk!</a>
+
+  <div>
+    <p>Rumors say some even got their domain for free!</p>
+    <p class="disclaimer">(registrar transfer fee not covered)</p>
+  </div>
 
 </section>
 
@@ -23,11 +24,12 @@
 
   section {
     background-color: oklch(from var(--c-background) calc(l + 0.05) c h);
-    padding: 32px;
-    border-radius: 16px;
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid oklch(from var(--c-primary) calc(l - 0.5) calc(c - 0.1) h / 0.5);
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 1.25rem;
   }
 
   h2 {
@@ -39,18 +41,34 @@
     }
   }
 
+  @property --c-gradient-start {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #00000000;
+  }
+
+  @property --c-gradient-end {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #00000000;
+  }
+
   a {
-    background-color: oklch(from var(--c-background) calc(l + 0.1) c h);
     font-weight: var(--fw--bold);
-    padding: 16px;
-    border-radius: 16px;
+    padding: 1rem;
+    border-radius: 0.5rem;
     text-decoration: none;
-    transition: background-color 0.3s, color 0.3s;
+    
+    --c-gradient-start: oklch(from var(--c-background) calc(l + 0.1) c h);
+    --c-gradient-end: var(--c-primary);
+    background: linear-gradient(to right, var(--c-gradient-start), var(--c-gradient-end));
+
+    transition: color 0.3s, --c-gradient-start 0.3s;
 
     &:hover,
     &:focus-visible {
+      --c-gradient-start: var(--c-primary);
       color: var(--c-background);
-      background-color: var(--c-primary);
     }
   }
 </style>

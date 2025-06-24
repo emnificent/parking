@@ -11,30 +11,30 @@
   <ul>
     <li>
       <a href="https://dynadot.com/market/user-listings/{domainName}" target="_blank" aria-label="Buy now for ${domainPrice} on Dynadot">
-        Dynadot
+        → Dynadot
       </a>
     </li>
     <li>
       <a href="https://sedo.com/search/details/?domain={domainName}" target="_blank" aria-label="Buy now for ${domainPrice} on Sedo">
-        Sedo
+        → Sedo
       </a>
     </li>
   </ul>
-  <p class="disclaimer">We do not support GoDaddy because of their abusive practices.</p>
+  <p class="disclaimer">We don't support GoDaddy because of their abusive practices.</p>
 </section>
 
 <style lang="scss">
   .disclaimer {
-    text-align: center;
-    padding-top: 16px;
+    padding-top: 1rem;
     font-size: var(--fs-text--small);
     opacity: 0.5;
   }
 
   section {
     background-color: oklch(from var(--c-background) calc(l + 0.05) c h);
-    padding: 32px;
-    border-radius: 16px;
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid oklch(from var(--c-primary) calc(l - 0.5) calc(c - 0.1) h / 0.5);
   }
 
   h2 {
@@ -55,25 +55,41 @@
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    margin-top: 16px;
+    gap: 1rem;
+    margin-top: 1rem;
   }
 
   li {
     display: contents;
   }
 
+  @property --c-gradient-start {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #00000000;
+  }
+
+  @property --c-gradient-end {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #00000000;
+  }
+
   a {
-    background-color: oklch(from var(--c-background) calc(l + 0.1) c h);
-    border-radius: 16px;
-    padding: 16px;
+    border-radius: 0.5rem;
+    padding: 1rem;
     text-decoration: none;
     font-weight: var(--fw--bold);
-    transition: background-color 0.3s, color 0.3s;
+
+    --c-gradient-start: oklch(from var(--c-background) calc(l + 0.1) c h);
+    --c-gradient-end: var(--c-primary);
+    background: linear-gradient(to right, var(--c-gradient-start), var(--c-gradient-end));
+
+    transition: color 0.3s, --c-gradient-start 0.3s;
 
     &:hover,
     &:focus-visible {
-      background-color: var(--c-primary);
+      --c-gradient-start: var(--c-primary);
       color: var(--c-background);
     }
   }

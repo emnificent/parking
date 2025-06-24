@@ -1,5 +1,4 @@
 <script>
-	import { onMount } from 'svelte';
   import domainsList from '$lib/data/domains.js';
 
   // Fisher-Yates x Durstenfeld
@@ -13,41 +12,12 @@
 
   import domainStore from '$lib/store/domainStore.js';
   $: filteredDomainsList = domainsList.filter(element => element.name !== $domainStore);
-
-  // generate the background bubbles
-  onMount(() => {
-    const container = document.getElementById('bubbles-container');
-    // generate 256 bubbles
-    for (let i = 0; i < 256; i++) {
-      let bubble = document.createElement('span');
-      // [-25; 100]
-      const top = `top:${randomInt(125) - 25}%`;
-      const left = `left:${randomInt(125) - 25}%`;
-      // [4; 24]
-      const width = `width:${randomInt(20) + 4}px`;
-      const animation = ['normal', 'reverse'];
-      // [0; 30]
-      const animationDelay = `animation-delay:-${randomInt(48)}s`
-
-      bubble.setAttribute('style', `${top}; ${left}; ${width}; ${animationDelay}`);
-      bubble.classList.add('bubble',
-        `bubble-${animation[Math.floor(Math.random() * animation.length)]}`
-      );
-
-      container.appendChild(bubble);
-    }
-  });
-
-  // [0; seed]
-  function randomInt(seed) {
-    return Math.floor(Math.random() * (seed + 1))
-  }
 </script>
 
 { #if filteredDomainsList.length > 0 }
   <section>
     <div class="title-container">
-      <h2>More gems</h2>
+      <h2>Other domains</h2>
     </div>
     <ul id="domains-list" class="list-content">
       { #each filteredDomainsList as domain }
@@ -55,20 +25,21 @@
       { /each }
     </ul>
 
-    <div class="bubbles-container" id="bubbles-container"></div>
+    <div class="background"></div>
   </section>
 { /if }
 
 <style lang="scss">
   section {
-    background-color: var(--c-background);
-    padding: 32px;
-    border-radius: 16px;
+    background-color: oklch(from var(--c-background) calc(l + 0.05) c h);
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid oklch(from var(--c-primary) calc(l - 0.5) calc(c - 0.1) h / 0.5);
     position: relative;
 
     &:hover,
     &:focus-within {
-      & .bubble {
+      & .background {
         opacity: 0;
       }
     }
@@ -83,14 +54,7 @@
   h2 {
     font-family: 'Ultra', sans-serif;
     font-size: var(--fs-title--small);
-    margin-bottom: 20px;
-    padding: 4px 16px;
-    width: fit-content;
-    border-radius: 8px;
-    background-color: var(--c-background);
-    box-shadow: 
-      var(--c-background) 8px 8px 16px, 
-      var(--c-background) -8px -8px 16px;
+    margin-bottom: 2.5rem;
     position: relative;
     z-index: 9999;
       
@@ -104,14 +68,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 16px;
+    gap: 1rem;
     position: relative;
     z-index: 9999;
 
     @media screen and (width >= 768px) {
       display: grid;
       grid-template: auto / repeat(2, 1fr);
-      gap: 20px 32px;
+      gap: 1.25rem 2rem;
     }
     
     @media screen and (width >= 1280px) {
@@ -119,65 +83,20 @@
     }
   }
 
-  li {
-    padding: 2px 10px;
-    width: fit-content;
-    border-radius: 8px;
-    background-color: var(--c-background);
-    box-shadow: 
-      var(--c-background) 4px 4px 8px, 
-      var(--c-background) -4px -4px 8px;
-  }
-
   a {
     font-family: 'Roboto Mono', monospace;
   }
 
-  .bubbles-container {
+  .background {
     position: absolute;
-    width: calc(100% - 32px);
-    height: calc(100% - 32px);
-    top: 16px;
-    left: 16px;
-    border-radius: 8px;
+    width: 100%; 
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 1rem;
     z-index: 99;
     overflow: hidden;
-
-    &::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 999;
-      box-shadow: 
-        var(--c-background) 8px 8px 16px inset, 
-        var(--c-background) -8px -8px 16px inset;
-    }
-  }
-
-  :global(.bubble) {
-    position: absolute;
-    aspect-ratio: 1/1;
-    border-radius: 50%;
-    background-color: var(--c-primary);
-    filter: blur(6px);
-    animation: circular-motion 48s linear infinite;
-    opacity: 0.6;
-    transition: opacity 0.6s;
-  }
-
-  :global(.bubble-reverse) {
-    animation-direction: reverse;
-  }
-
-  @keyframes circular-motion {
-    from {
-      transform: rotate(0deg) translate(128px) rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg) translate(128px) rotate(-360deg);
-    }
+    background: radial-gradient(circle at center 500%, var(--c-primary), oklch(from var(--c-background) calc(l + 0.05) c h));
+    transition: opacity 0.3s;
   }
 </style>

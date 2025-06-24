@@ -11,14 +11,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-block: 16px 8px;
+    padding-block: 1rem 0.5rem;
 
     @media screen and (width >= 768px) {
-      padding-top: 24px;
+      padding-top: 1.5rem;
     }
 
     @media screen and (width >= 1280px) {
-      padding-top: 32px;
+      padding-top: 2rem;
     }
 
     & p {

@@ -4,13 +4,13 @@
 </script>
 
 <header>
-  <h1><span class="domain">{domainName}</span><br />is for sale</h1>
+  <h1><span class="domain">{domainName.replace(/\.\w+/, '')}</span><br />is for sale</h1>
 </header>
 
 <style lang="scss">
   header {
     text-align: center;
-    margin-block: 48px 96px;
+    margin-block: 3rem 6rem;
 
     & h1 {
       font-weight: var(--fw--bold);
@@ -23,7 +23,7 @@
       & .domain {
         font-family: 'Ultra', sans-serif;
         font-weight: var(--fw);
-        font-size: var(--fs-title--small);
+        font-size: var(--fs-title);
         color: var(--c-primary);
         display: block;
         

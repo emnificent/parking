@@ -13,7 +13,7 @@
   div {
     display: flex;
     flex-direction: column;
-    gap: 96px;
+    gap: 6rem;
 
     @media screen and (width >= 1280px) {
       flex-direction: row;

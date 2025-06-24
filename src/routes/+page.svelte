@@ -13,6 +13,6 @@
   main {
     display: flex;
     flex-direction: column;
-    gap: 96px;
+    gap: 6rem;
   }
 </style>
