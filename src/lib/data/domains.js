@@ -9,7 +9,6 @@ const domains = [
   { name: 'mystess.com', price: 1746 },
   { name: 'operess.com', price: 1779 },
   { name: 'pneumatube.com', price: 2435 },
-  { name: 'satancore.com', price: 1347 },
   { name: 'unbowedpress.com', price: 936 },
 ];
 
